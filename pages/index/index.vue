@@ -1,7 +1,8 @@
 <template>
 	<view>
 		<view>
-			<map style="width: 750rpx; height: 750rpx;" :latitude="lat" :longitude="lng" :markers="covers" scale="18" :show-compass="true" :controls="controls"></map>
+			<map style="width: 750rpx; height: 750rpx;" :latitude="lat" :longitude="lng" :markers="covers" scale="18"
+			 :show-compass="true" :controls="controls"></map>
 		</view>
 		<view>
 			<navigator url="/pages/site/site">
@@ -22,8 +23,18 @@
 			return {
 				lat: "",
 				lng: "",
-				covers:[],
-				controls:[]
+				covers: [],
+				controls: [{
+					id: 100,
+					position: {
+						left: 0,
+						top: 60,
+						width: 30,
+						height: 30
+					},
+					iconPath: '/static/index/aim.png',
+					clickable: true
+				}]
 			}
 		},
 		onShow() {
@@ -33,7 +44,11 @@
 					let wgs84togcj02 = coordinateConversionUtil.wgs84togcj02(res.longitude, res.latitude);
 					this.lat = wgs84togcj02[1];
 					this.lng = wgs84togcj02[0];
+					if (this.covers.size === 1) {
+						this.covers.clear();
+					}
 					this.covers.push({
+						id: 1,
 						latitude: this.lat,
 						longitude: this.lng,
 						iconPath: ""
