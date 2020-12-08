@@ -1,1 +1,0 @@
-<view><view><view>可用余额</view><u-button vue-id="7f370558-1" bind:__l="__l" vue-slots="{{['default']}}">充值</u-button></view><view><u-cell-group vue-id="7f370558-2" bind:__l="__l" vue-slots="{{['default']}}"><u-cell-item vue-id="{{('7f370558-3')+','+('7f370558-2')}}" title="交易明细" bind:__l="__l"></u-cell-item></u-cell-group></view></view>
