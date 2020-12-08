@@ -51,7 +51,12 @@
 
 <style lang="scss" scoped>
 	.userinfo{
+		width: 100%;
+		height: 300rpx;
 		background-color: red;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
 		u-avatar{
 			float: left;
 		}
