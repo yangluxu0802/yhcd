@@ -54,6 +54,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/personalCenter/changePhoneNumber/changePhoneNumber",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

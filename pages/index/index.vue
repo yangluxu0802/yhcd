@@ -43,7 +43,6 @@
 		},
 		methods: {
 			scanCodeTocharge() {
-				console.log('aaa')
 				uni.scanCode({
 					success: function(res) {
 						console.log('条码类型：' + res.scanType);

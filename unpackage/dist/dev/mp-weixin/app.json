@@ -5,7 +5,8 @@
     "pages/personalCenter/personalCenter",
     "pages/personalCenter/order/order",
     "pages/personalCenter/wallet/wallet",
-    "pages/personalCenter/wallet/transactionDetails/transactionDetails"
+    "pages/personalCenter/wallet/transactionDetails/transactionDetails",
+    "pages/personalCenter/changePhoneNumber/changePhoneNumber"
   ],
   "subPackages": [],
   "window": {
@@ -19,6 +20,5 @@
       "desc": "后续功能需要"
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap87.json"
+  "usingComponents": {}
 }
