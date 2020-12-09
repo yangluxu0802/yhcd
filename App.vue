@@ -11,11 +11,11 @@
 						success: function(infoRes) {
 							console.log(infoRes.userInfo);
 							uni.setStorage({
-							    key: 'userInfo',
-							    data: infoRes.userInfo,
-							    success: function () {
-							        console.log('success');
-							    }
+								key: 'userInfo',
+								data: infoRes.userInfo,
+								success: function() {
+									console.log('success');
+								}
 							});
 						}
 					});
@@ -34,4 +34,7 @@
 
 <style lang="scss">
 	@import "uview-ui/index.scss";
+	@import "colorui/main.css";
+	@import "colorui/icon.css";
+	@import "colorui/animation.css";
 </style>

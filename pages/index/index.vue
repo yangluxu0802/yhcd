@@ -1,16 +1,16 @@
 <template>
 	<view>
 		<view>
-			<map style="width: 750rpx; height: 750rpx;" :latitude="lat" :longitude="lng" :markers="covers" scale="18"
-			 :show-compass="true" :controls="controls"></map>
+			<map :latitude="lat" :longitude="lng" :markers="covers" scale="18" :show-location="true" :controls="controls" id="map"
+			 @controltap="controltap"></map>
 		</view>
-		<view>
-			<navigator url="/pages/site/site">
-				<button type="default">附近站点</button>
+		<view class="flex">
+			<navigator url="/pages/site/site" class="flex-sub padding-sm margin-xs radius">
+				<image src="/static/index/personalCenter.png">附近站点</image>
 			</navigator>
-			<u-button type="primary" shape="circle" size="medium" @click="scanCodeTocharge">扫码充电</u-button>
-			<navigator url="/pages/personalCenter/personalCenter">
-				个人中心
+			<button @click="scanCodeTocharge" class="cu-btn line-orange round lg shadow">扫码充电</button>
+			<navigator url="/pages/personalCenter/personalCenter" class="flex-sub padding-sm margin-xs radius">
+				<image src="/static/index/personalCenter.png">个人中心</image>
 			</navigator>
 		</view>
 	</view>
@@ -21,6 +21,7 @@
 	export default {
 		data() {
 			return {
+				mapContext: null,
 				lat: "",
 				lng: "",
 				covers: [],
@@ -36,6 +37,10 @@
 					clickable: true
 				}]
 			}
+		},
+		onLoad() {
+			this.mapContext = uni.createMapContext("map");
+			console.log(this.mapContext);
 		},
 		onShow() {
 			uni.getLocation({
@@ -64,11 +69,22 @@
 						console.log('条码内容：' + res.result);
 					}
 				});
+			},
+			controltap() {
+				this.mapContext.moveToLocation();
 			}
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
+	map {
+		width: 100%;
+		height: 1000rpx;
+	}
 
+	image {
+		width: 50rpx;
+		height: 50rpx;
+	}
 </style>
