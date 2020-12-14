@@ -1,17 +1,23 @@
 <template>
-	<view>
+	<view class="container">
 		<view>
-			<map :latitude="lat" :longitude="lng" :markers="covers" scale="18" :show-location="true" :controls="controls" id="map"
-			 @controltap="controltap"></map>
+			<map :latitude="lat" :longitude="lng" :markers="covers" scale="18" :show-location="true" :controls="controls"
+			 id="map" @controltap="controltap"></map>
 		</view>
-		<view class="flex">
-			<navigator url="/pages/site/site" class="flex-sub padding-sm margin-xs radius">
-				<image src="/static/index/personalCenter.png">附近站点</image>
-			</navigator>
-			<button @click="scanCodeTocharge" class="cu-btn line-orange round lg shadow">扫码充电</button>
-			<navigator url="/pages/personalCenter/personalCenter" class="flex-sub padding-sm margin-xs radius">
-				<image src="/static/index/personalCenter.png">个人中心</image>
-			</navigator>
+		<view>
+			<view>
+				<navigator url="/pages/site/site">
+					附近站点
+				</navigator>
+			</view>
+			<view><button @click="scanCodeTocharge">
+					扫码充电
+				</button></view>
+			<view>
+				<navigator url="/pages/personalCenter/personalCenter">
+					个人中心
+				</navigator>
+			</view>
 		</view>
 	</view>
 </template>
@@ -78,13 +84,29 @@
 </script>
 
 <style lang="scss" scoped>
-	map {
-		width: 100%;
-		height: 1000rpx;
+	* {
+		padding: 0;
+		margin: 0;
+	}
+	
+	view.container {
+		height: 100vh;
 	}
 
-	image {
-		width: 50rpx;
-		height: 50rpx;
+	view.container view:nth-of-type(2) {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		align-content: center;
+		padding: 15rpx;
+	}
+
+	map {
+		width: 100%;
+		height: 85vh;
+	}
+
+	navigator {
+		border: solid 1px #ddd;
 	}
 </style>

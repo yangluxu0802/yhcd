@@ -2,7 +2,7 @@
 	<view>
 		<view class="userinfo">
 			<u-avatar :src="userInfo.avatarUrl" :show-level="true" size="large"></u-avatar>
-			<h1>158****0989</h1>
+			<text>158****0989</text>
 			<navigator url="/pages/personalCenter/changePhoneNumber/changePhoneNumber">
 				<button type="default">更换手机号</button>
 			</navigator>
