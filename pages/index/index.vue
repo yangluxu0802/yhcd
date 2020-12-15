@@ -1,8 +1,8 @@
 <template>
 	<view class="container">
 		<view>
-			<map :latitude="lat" :longitude="lng" :markers="covers" scale="18" :show-location="true" :controls="controls"
-			 id="map" @controltap="controltap"></map>
+			<map :latitude="lat" :longitude="lng" :markers="covers" scale="18" :show-location="true" :controls="controls" id="map"
+			 @controltap="controltap"></map>
 		</view>
 		<view>
 			<view>
@@ -10,9 +10,11 @@
 					附近站点
 				</navigator>
 			</view>
-			<view><button @click="scanCodeTocharge">
-					扫码充电
-				</button></view>
+			<view>
+				<button @click="scanCodeTocharge" class="aim">
+					&#xe61c; 扫码充电
+				</button>
+			</view>
 			<view>
 				<navigator url="/pages/personalCenter/personalCenter">
 					个人中心
@@ -88,7 +90,17 @@
 		padding: 0;
 		margin: 0;
 	}
-	
+
+	@font-face {
+		font-family: 'iconfont';
+		src: url('https://at.alicdn.com/t/font_2271670_lo2lw2vpoph.ttf') format('truetype');
+	}
+
+	.aim {
+		font-family: iconfont;
+		margin-left: 20rpx;
+	}
+
 	view.container {
 		height: 100vh;
 	}
@@ -98,7 +110,7 @@
 		justify-content: space-evenly;
 		align-items: center;
 		align-content: center;
-		padding: 15rpx;
+		padding: 20rpx;
 	}
 
 	map {
@@ -108,5 +120,12 @@
 
 	navigator {
 		border: solid 1px #ddd;
+	}
+
+	button {
+		padding-left: 24px;
+		padding-right: 24px;
+		border-radius: 30px;
+		background-color: #2df8d0;
 	}
 </style>
