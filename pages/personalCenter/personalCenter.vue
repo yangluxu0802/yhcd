@@ -1,11 +1,19 @@
 <template>
-	<view>
-		<view class="userinfo">
-			<u-avatar :src="userInfo.avatarUrl" :show-level="true" size="large"></u-avatar>
-			<text>158****0989</text>
-			<navigator url="/pages/personalCenter/changePhoneNumber/changePhoneNumber">
-				<button type="default">更换手机号</button>
-			</navigator>
+	<view class="container">
+		<view>
+			<view>
+				<u-avatar :src="userInfo.avatarUrl" :show-level="true" size="large"></u-avatar>
+			</view>
+			<view>
+				<view>
+					<text>158****0989</text>
+				</view>
+				<view>
+					<navigator url="/pages/personalCenter/changePhoneNumber/changePhoneNumber">
+						<button type="default">更换手机号</button>
+					</navigator>
+				</view>
+			</view>
 		</view>
 		<view>
 			<u-cell-group>
@@ -50,22 +58,19 @@
 </script>
 
 <style lang="scss" scoped>
-	.userinfo{
+	view.container {
+		height: 100vh;
 		width: 100%;
-		height: 300rpx;
-		background-color: red;
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-		u-avatar{
-			float: left;
-		}
-		navigator{
-			height: 80rpx;
-			width: 50%;
-			button{
-				height: 80rpx;
-			}
-		}
 	}
+	view.container view:nth-of-type(1) {
+		width: 100%;
+		display: flex;
+		background-color: red;
+	}
+	
+	navigator{
+		height: 80rpx;
+		width: 50%;
+	}
+	
 </style>
