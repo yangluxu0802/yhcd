@@ -62,15 +62,24 @@
 		height: 100vh;
 		width: 100%;
 	}
-	view.container view:nth-of-type(1) {
+
+	view.container>view:first-child {
 		width: 100%;
 		display: flex;
-		background-color: red;
+		justify-content: flex-start;
+		padding: 40rpx;
+		margin-bottom: 20rpx;
+
+		>view:first-child {
+			margin-right: 40rpx;
+		}
 	}
 	
-	navigator{
-		height: 80rpx;
-		width: 50%;
+	navigator {
+		width: 400rpx;
+		button {
+			width: 400rpx;
+		}
 	}
-	
 </style>
+	

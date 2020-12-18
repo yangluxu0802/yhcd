@@ -125,7 +125,6 @@
 	button {
 		padding-left: 24px;
 		padding-right: 24px;
-		border-radius: 30px;
 		background-color: #2df8d0;
 	}
 </style>
