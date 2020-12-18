@@ -5,7 +5,7 @@
 				provider: 'weixin',
 				scopes: ['auth_user'],
 				success: function(loginRes) {
-					console.log(loginRes.authResult);
+					console.log(loginRes);
 					console.log(loginRes.code);
 					// 获取用户信息
 					uni.getUserInfo({
