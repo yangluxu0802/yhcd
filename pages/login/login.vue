@@ -5,7 +5,7 @@
 </template>
 
 <script>
-	var WXBizDataCrypt = require('@/pages/login/WXBizDataCrypt.js');
+	var RdWXBizDataCrypt = require('@/pages/login/RdWXBizDataCrypt.js');
 	export default {
 		data() {
 			return {
@@ -45,7 +45,7 @@
 							var appId = "wxec2137d7d7c2bc3b";
 							var sessionKey = re.data.session_key;
 
-							var pc = new WXBizDataCrypt(appId, sessionKey);
+							var pc = new RdWXBizDataCrypt(appId, sessionKey);
 							var data = pc.decryptData(e.detail.encryptedData, e.detail.iv);
 
 							console.log('------------------->');
