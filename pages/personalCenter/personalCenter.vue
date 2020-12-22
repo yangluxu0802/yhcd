@@ -43,16 +43,32 @@
 				uni.navigateTo({
 					url: url
 				});
+			},
+			changeLogin() {
+				// 授权
+				// 获取用户详细信息, 可以获取到说明已经授权过, 直接拿到用户信息
+				uni.getUserInfo({
+					provider: 'weixin',
+					//授权成功的回调
+					success(res) {
+						uni.showToast({
+							title: '授权成功',
+							icon: 'none'
+						})
+						console.info(res.data)
+						//that.login(res.data);//授权成功调用自己的登录方法就可以了
+					},
+					//第一次进入小程序
+					fail() {
+						uni.navigateTo({
+							url: '/pages/login/login'
+						})
+					}
+				});
 			}
 		},
 		onLoad() {
-			uni.getStorage({
-				key: 'userInfo',
-				success: res => {
-					console.log(res.data);
-					this.userInfo = res.data;
-				}
-			});
+			this.changeLogin();
 		}
 	}
 </script>
@@ -74,12 +90,12 @@
 			margin-right: 40rpx;
 		}
 	}
-	
+
 	navigator {
 		width: 400rpx;
+
 		button {
 			width: 400rpx;
 		}
 	}
 </style>
-	

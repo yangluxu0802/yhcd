@@ -1,29 +1,6 @@
 <script>
 	export default {
-		onLaunch: function() {
-			uni.login({
-				provider: 'weixin',
-				scopes: ['auth_user'],
-				success: function(loginRes) {
-					console.log(loginRes);
-					console.log(loginRes.code);
-					// 获取用户信息
-					uni.getUserInfo({
-						provider: 'weixin',
-						success: function(infoRes) {
-							console.log(infoRes.userInfo);
-							uni.setStorage({
-								key: 'userInfo',
-								data: infoRes.userInfo,
-								success: function() {
-									console.log('success');
-								}
-							});
-						}
-					});
-				}
-			});
-		},
+		onLaunch: function() {},
 		onShow: function() {},
 		onHide: function() {}
 	}
